@@ -1,1 +1,228 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Agronegócio</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffd000;
+    color:#000000;
+}
+
+h1{
+    text-align:center;
+}
+
+h2{
+    color:#825e15;
+}
+
+h3{
+    color:#000000;
+}
+
+p, ul{
+    margin:20px;
+}
+
+ul{
+    padding-left:40px;
+}
+
+li{
+    margin:8px 0;
+}
+
+#modoEscuro{
+    position:fixed;
+    top:15px;
+    right:15px;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    background:#333;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+#modoEscuro:hover{
+    background:#555;
+}
+
+.dark{
+    background:#1b1b1b;
+    color:white;
+}
+
+.dark h2,
+.dark h3{
+    color:#ffd54f;
+}
+
+.usuario{
+    background:rgb(211,130,8);
+    width:80%;
+    max-width:400px;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+.usuario input{
+    width:80%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.usuario button{
+    padding:10px 20px;
+    background:#f4c542;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.usuario button:hover{
+    background:#e6b800;
+}
+
+#mensagem{
+    margin-top:15px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<button id="modoEscuro">Modo Escuro</button>
+
+<h1>O Agronegócio</h1>
+
+<p>
+O agronegócio é um dos setores mais importantes da economia.
+Ele envolve todas as atividades relacionadas à produção,
+processamento e comercialização de produtos agrícolas e pecuários.
+No Brasil, o agronegócio tem grande destaque,
+gerando empregos e alimentos para o país e o mundo.
+</p>
+
+<h1>O que é o agronegócio?</h1>
+
+<ul>
+<li>É o conjunto de atividades ligadas ao campo.</li>
+<li>Inclui agricultura, pecuária, indústria e comércio.</li>
+<li>Envolve desde o plantio até a venda dos produtos.</li>
+<li>Utiliza tecnologia para aumentar a produção.</li>
+<li>É essencial para a alimentação da população.</li>
+</ul>
+
+<h1>A importância do agronegócio</h1>
+
+<p>
+O agronegócio garante o abastecimento de alimentos,
+movimenta a economia e contribui para o desenvolvimento do país.
+Além disso, é responsável por grande parte das exportações brasileiras.
+</p>
+
+<h2>Curiosidades</h2>
+
+<ul>
+<li>O Brasil é um dos maiores produtores agrícolas do mundo.</li>
+<li>Produtos como soja, milho, carne e café são destaques.</li>
+</ul>
+
+<h1>Desafios do agronegócio</h1>
+
+<h3>Uso de recursos naturais</h3>
+
+<p>
+O uso inadequado do solo e da água pode causar impactos ambientais,
+como erosão e poluição dos rios.
+</p>
+
+<h3>Desmatamento</h3>
+
+<p>
+A expansão agrícola descontrolada pode provocar o desmatamento,
+prejudicando o meio ambiente e a biodiversidade.
+</p>
+
+<h3>Mudanças climáticas</h3>
+
+<p>
+As alterações no clima afetam as safras,
+podendo causar secas ou chuvas excessivas que prejudicam a produção.
+</p>
+
+<h1>Como tornar o agronegócio mais sustentável?</h1>
+
+<ul>
+<li>Usar técnicas de cultivo sustentável.</li>
+<li>Preservar áreas naturais.</li>
+<li>Economizar água e energia.</li>
+<li>Investir em tecnologia e inovação.</li>
+</ul>
+
+<section class="usuario">
+
+<h2>Deixe seu nome e idade</h2>
+
+<label>Nome:</label><br>
+<input type="text" id="nome" placeholder="Digite seu nome"><br><br>
+
+<label>Idade:</label><br>
+<input type="number" id="idade" placeholder="Digite sua idade"><br><br>
+
+<button onclick="mostrarMensagem()">Entrar</button>
+
+<p id="mensagem"></p>
+
+</section>
+
+<script>
+
+const botao = document.getElementById("modoEscuro");
+
+botao.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        botao.innerHTML = "Modo Claro";
+    }else{
+        botao.innerHTML = "Modo Escuro";
+    }
+
+});
+
+function mostrarMensagem(){
+
+    let nome = document.getElementById("nome").value;
+    let idade = document.getElementById("idade").value;
+
+    if(nome === "" || idade === ""){
+        alert("Preencha seu nome e sua idade.");
+        return;
+    }
+
+    document.getElementById("mensagem").innerHTML =
+    "Olá, " + nome + "! Você tem " + idade + " anos.";
+
+}
+
+</script>
+
+</body>
+</html>
